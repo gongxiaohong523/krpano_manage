@@ -1012,18 +1012,18 @@ public final class DateUtil {
     /**
      * 获取年第一个月 第一天
      */
-    public static Date getYearStartTime(Date date){
+    public static Date getYearStartTime(Date date) {
         if (date == null) {
             return null;
         }
-        try{
+        try {
             Calendar c = Calendar.getInstance();
             c.setTime(date);
-            c.set(Calendar.MONTH,0);
-            c.set(Calendar.DAY_OF_YEAR,1);
+            c.set(Calendar.MONTH, 0);
+            c.set(Calendar.DAY_OF_YEAR, 1);
             return c.getTime();
-        }catch (Exception e){
-            log.error("获取年第一个月异常",e);
+        } catch (Exception e) {
+            log.error("获取年第一个月异常", e);
             return null;
         }
     }
@@ -1042,6 +1042,7 @@ public final class DateUtil {
         ZonedDateTime zonedDateTime = startOfDay.atZone(ZoneId.of("Asia/Shanghai"));
         return Date.from(zonedDateTime.toInstant());
     }
+
     /**
      * 根据年月获取当月的最后一天
      *
@@ -1071,6 +1072,7 @@ public final class DateUtil {
 
         return Date.from(zonedDateTime.toInstant());
     }
+
     /**
      * 根据年获取当年第一天
      *
@@ -1079,7 +1081,7 @@ public final class DateUtil {
      */
     public static Date getYearEndTime(int year) {
         Year yearMonth = Year.of(year);
-        LocalDate endOfMonth = yearMonth.atMonthDay(MonthDay.of(12,31));
+        LocalDate endOfMonth = yearMonth.atMonthDay(MonthDay.of(12, 31));
         LocalDateTime localDateTime = endOfMonth.atTime(23, 59, 59, 999);
         ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.of("Asia/Shanghai"));
         return Date.from(zonedDateTime.toInstant());
@@ -1088,18 +1090,18 @@ public final class DateUtil {
     /**
      * 获取去年最后个月 最后一天
      */
-    public static Date getLastYearEndDayTime(Date date){
+    public static Date getLastYearEndDayTime(Date date) {
         if (date == null) {
             return null;
         }
-        try{
+        try {
             Calendar c = Calendar.getInstance();
             c.setTime(date);
-            c.set(Calendar.MONTH,0);
-            c.set(Calendar.DAY_OF_YEAR,0);
+            c.set(Calendar.MONTH, 0);
+            c.set(Calendar.DAY_OF_YEAR, 0);
             return c.getTime();
-        }catch (Exception e){
-            log.error("获取去年最后一个月异常",e);
+        } catch (Exception e) {
+            log.error("获取去年最后一个月异常", e);
             return null;
         }
     }
@@ -1107,19 +1109,19 @@ public final class DateUtil {
     /**
      * 获取去年第一个月 第一一天
      */
-    public static Date getLastYearStartDayTime(Date date){
+    public static Date getLastYearStartDayTime(Date date) {
         if (date == null) {
             return null;
         }
-        try{
+        try {
             Calendar c = Calendar.getInstance();
             c.setTime(date);
-            c.add(Calendar.YEAR,-1);
-            c.set(Calendar.MONTH,0);
-            c.set(Calendar.DAY_OF_YEAR,1);
+            c.add(Calendar.YEAR, -1);
+            c.set(Calendar.MONTH, 0);
+            c.set(Calendar.DAY_OF_YEAR, 1);
             return c.getTime();
-        }catch (Exception e){
-            log.error("获取去年第一个月异常",e);
+        } catch (Exception e) {
+            log.error("获取去年第一个月异常", e);
             return null;
         }
     }
@@ -1127,23 +1129,24 @@ public final class DateUtil {
     /**
      * 获取前一天日期
      */
-    public static Date getLastDayTime(Date date){
+    public static Date getLastDayTime(Date date) {
         if (date == null) {
             return null;
         }
-        try{
+        try {
             Calendar c = Calendar.getInstance();
             c.setTime(date);
-            c.add(Calendar.DAY_OF_YEAR,-1);
+            c.add(Calendar.DAY_OF_YEAR, -1);
             return c.getTime();
-        }catch (Exception e){
-            log.error("获取前一天日期异常",e);
+        } catch (Exception e) {
+            log.error("获取前一天日期异常", e);
             return null;
         }
     }
 
     /**
      * 获取日期在当月的 天数
+     *
      * @param date
      * @return
      */
@@ -1151,17 +1154,18 @@ public final class DateUtil {
         if (date == null) {
             return 0;
         }
-        try{
+        try {
             Calendar c = Calendar.getInstance();
             return c.get(Calendar.DAY_OF_MONTH);
-        }catch (Exception e){
-            log.error("获取前一天日期异常",e);
+        } catch (Exception e) {
+            log.error("获取前一天日期异常", e);
             return 0;
         }
     }
 
     /**
      * 时间设置当前时分秒
+     *
      * @param date 入参
      * @return Date
      */
