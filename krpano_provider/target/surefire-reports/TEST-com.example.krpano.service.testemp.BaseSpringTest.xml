@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.example.krpano.service.testemp.BaseSpringTest" time="0.005" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="14.0.1+7"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/xiaohonggong/IdeaProjects/krpano/krpano_provider"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="user.script" value="Hans"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/xiaohonggong/IdeaProjects/krpano/krpano_provider"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="14.0.1+7"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/xb/v_67wjz145l7fn5zfq79pd080000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="idea.version2020.1" value="true"/>
+    <property name="maven.ext.class.path" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/xiaohonggong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="58.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value="/Users/xiaohonggong/Documents/maven/repository"/>
+    <property name="os.version" value="10.15.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/xiaohonggong"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="14"/>
+    <property name="user.name" value="xiaohonggong"/>
+    <property name="java.class.path" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2020.1 -s /Users/xiaohonggong/Documents/maven/apache-maven-3.6.3-bin.tar/apache-maven-3.6.3/conf/settings_bak.xml -Dmaven.repo.local=/Users/xiaohonggong/Documents/maven/repository install"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="14.0.1"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2020-04-14"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase classname="com.example.krpano.service.testemp.BaseSpringTest" name="initializationError" time="0.005">
+    <error message="Invalid test class &apos;com.example.krpano.service.testemp.BaseSpringTest&apos;:
+  1. No runnable methods" type="org.junit.runners.model.InvalidTestClassError">org.junit.runners.model.InvalidTestClassError: Invalid test class &apos;com.example.krpano.service.testemp.BaseSpringTest&apos;:
+  1. No runnable methods
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:525)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:92)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:74)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.&lt;init&gt;(SpringJUnit4ClassRunner.java:137)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:104)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:250)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>00:32:47,993 |-INFO in ch.qos.logback.classic.LoggerContext[logback] - Could NOT find resource [logback-test.xml]
+00:32:47,994 |-INFO in ch.qos.logback.classic.LoggerContext[logback] - Could NOT find resource [logback.groovy]
+00:32:47,995 |-INFO in ch.qos.logback.classic.LoggerContext[logback] - Found resource [logback.xml] at [file:/Users/xiaohonggong/IdeaProjects/krpano/krpano_provider/target/classes/logback.xml]
+00:32:48,053 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+00:32:48,058 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/Users/xiaohonggong/IdeaProjects/krpano/krpano_provider/target/classes/logback.xml] 
+00:32:48,058 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+00:32:48,064 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@9:118 - no applicable action for [springProperty], current ElementPath  is [[configuration][springProperty]]
+00:32:48,064 |-INFO in ch.qos.logback.classic.joran.action.ContextNameAction - Setting logger context name as [logback]
+00:32:48,066 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:32:48,068 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [console]
+00:32:48,115 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+00:32:48,115 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+00:32:48,115 |-WARN in ch.qos.logback.core.ConsoleAppender[console] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+00:32:48,115 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+00:32:48,117 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [file]
+00:32:48,122 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1224347463 - Archive files will be limited to [64 MB] each.
+00:32:48,124 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1224347463 - No compression will be used
+00:32:48,125 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1224347463 - Will use the pattern /data/WEBLOG/app.name_IS_UNDEFINED/app.name_IS_UNDEFINED-%d{yyyy-MM-dd}-%i.log for the active file
+00:32:48,127 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6ac13091 - The date pattern is &apos;yyyy-MM-dd&apos; from file name pattern &apos;/data/WEBLOG/app.name_IS_UNDEFINED/app.name_IS_UNDEFINED-%d{yyyy-MM-dd}-%i.log&apos;.
+00:32:48,127 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6ac13091 - Roll-over at midnight.
+00:32:48,132 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@6ac13091 - Setting initial period to Fri Jul 03 00:30:19 CST 2020
+00:32:48,135 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[file] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+00:32:48,135 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[file] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+00:32:48,135 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[file] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+00:32:48,135 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[file] - Append mode is mandatory for RollingFileAppender. Defaulting to append=true.
+00:32:48,136 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[file] - Active log file name: /data/WEBLOG/app.name_IS_UNDEFINED/app.name_IS_UNDEFINED.log
+00:32:48,136 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[file] - File property is set to [/data/WEBLOG/app.name_IS_UNDEFINED/app.name_IS_UNDEFINED.log]
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.springframework] to INFO
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [message.service] to INFO
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.mybatis] to INFO
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.richgo.utils] to WARN
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+00:32:48,137 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [console] to Logger[ROOT]
+00:32:48,137 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [file] to Logger[ROOT]
+00:32:48,137 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+00:32:48,138 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@5e316c74 - Registering current configuration as safe fallback point
+
+</system-out>
+  </testcase>
+</testsuite>

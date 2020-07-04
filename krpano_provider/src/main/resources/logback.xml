@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--scan: 当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。-->
+<!--scanPeriod: 设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。-->
+<!--debug: 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!-- 该标签允许我们从Spring中显示属性，Environment 以便在Logback中使用。如果你想将 application.properties在回读配置中访问文件中的值，这将非常有用 -->
+    <!--标签的工作方式与Logback的标准 <property> 标签类似，但不是直接value 指定source属性（从Environment）指定。scope 如果需要将属性存储在local范围之外的其他位置，
+    则可以使用该属性。如果您需要一个后备值，以防该属性未设置，则Environment可以使用该defaultValue属性-->
+    <springProperty scope="context" name="app.name" source="spring.application.name" defaultValue="krpano_provider"/>
+
+    <!--用来设置上下文名称，每个logger都关联到logger上下文，默认上下文名称为default。但可以使用<contextName>设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改-->
+    <contextName>logback</contextName>
+
+    <!--日志敏感信息脱敏处理（姓名，手机号、身份证号、银行卡号，生日）-->
+<!--    <conversionRule conversionWord="msg" converterClass="com.chtwm.yfsb.util.SensitiveDataConverter"></conversionRule>-->
+
+    <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径，运维规定使用/data/WEBLOG/项目名字，项目名称不能重复-->
+    <property name="log.path" value="/data/WEBLOG/${app.name}" />
+    <property name="log.file" value="${log.path}/${app.name}" />
+    <!--格式化输出：%d:表示日期    %thread:表示线程名     %-5level:级别从左显示5个字符宽度  %msg:日志消息    %n:是换行符-->
+    <property name="normal-pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %X{tid} [%thread] %-5level %logger{50}:%L - %msg%n"/>
+    <!--控制台输出可设置每个字段的颜色，方便本地调试查看-->
+    <property name="colorful-pattern" value="%red(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%X{tid}) %green([%thread]) %highlight(%-5level) %cyan(%logger{50}:%L) - %boldMagenta(%msg%n)"/>
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.mdc.TraceIdMDCPatternLogbackLayout">
+            <pattern>${colorful-pattern}</pattern>
+        </layout>
+    </appender>
+
+    <!--输出到文件-->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.file}.log</file>
+        <append>false</append>
+        <!--滚动策略，基于时间的滚动策略，logback提供了丰富而高效的日志输出方式，并通过滚动策略，将实施时复杂的备份策略整合-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 按照每天备份生成日志文件 -->
+            <fileNamePattern>${log.file}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <!--每个文件最大64MB-->
+            <maxFileSize>64MB</maxFileSize>
+        </rollingPolicy>
+        <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.mdc.TraceIdMDCPatternLogbackLayout">
+            <pattern>${normal-pattern}</pattern>
+        </layout>
+    </appender>
+
+    <!--屏蔽所有org.springframework.*输出的Debug（及以下）信息-->
+    <logger name="org.springframework" level="INFO" />
+    <logger name="message.service" level="INFO" />
+    <logger name="org.mybatis" level="INFO" />
+    <logger name="com.richgo.utils" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+</configuration>

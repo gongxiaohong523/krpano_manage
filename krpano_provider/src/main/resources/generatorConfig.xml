@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <!--<classPathEntry  location="C:\Users\Kayle\.m2\repository\oracle\ojdbc14\10.2.0.4\ojdbc14-10.2.0.4.jar"/>-->
+    <context id="context1" >
+
+        <!-- 使用自带序列化插件 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <!--https://mapperhelper.github.io/docs/3.usembg/，自动生成代码的通用mapper插件-->
+        <!--<plugin type="tk.mybatis.mapper.generator.MapperPlugin">-->
+            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
+            <!--&lt;!&ndash; caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true &ndash;&gt;-->
+            <!--<property name="caseSensitive" value="true"/>-->
+            <!--<property name="forceAnnotation" value="true"/>-->
+            <!--<property name="lombok" value="Getter,Setter"/>&lt;!&ndash;使用lombok注解 &ndash;&gt;-->
+        <!--</plugin>-->
+
+        <commentGenerator >
+            <!-- 是否取消自动生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 是否生成注释代时间戳-->
+            <!-- <property name="suppressDate" value="true" />-->
+        </commentGenerator>
+
+        <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@172.16.165.15:1521:orcl" userId="sfuser" password="sfuser" />-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test"
+                        userId="root"
+                        password="adminroot" />
+
+        <javaModelGenerator targetPackage="com.example.krpano.entity.input.testemp"
+                            targetProject="../krpano_provider/src/main/java" />
+
+        <sqlMapGenerator targetPackage="mapper/testemp"
+                         targetProject="src/main/resources" />
+
+        <javaClientGenerator targetPackage="com.example.krpano.mapper.testemp"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+
+
+        <table  tableName="test_emp"
+                domainObjectName="TestEmp"
+                enableCountByExample="false"
+                enableUpdateByExample="false"
+                enableDeleteByExample="false"
+                enableSelectByExample="false"
+                selectByExampleQueryId="false" >
+        </table>
+
+    </context>
+</generatorConfiguration>
