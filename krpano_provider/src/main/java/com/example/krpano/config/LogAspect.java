@@ -31,43 +31,43 @@ public class LogAspect {
 
     @Before("webLog()")
     public void deBefore(JoinPoint joinPoint) throws Throwable {
-        log.info("方法执行前执行");
+        //log.info("方法执行前执行");
     }
 
     @AfterReturning(returning = "ret", pointcut = "webLog()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
-        log.info("方法的返回值 : " + JSON.toJSONString(ret));
+        //log.info("方法的返回值 : " + JSON.toJSONString(ret));
 
     }
 
     //后置异常通知
     @AfterThrowing("webLog()")
     public void throwss(JoinPoint jp){
-        log.info("方法异常时执行.....  " );
+        //log.info("方法异常时执行.....  " );
 
     }
 
     //后置最终通知,final增强，不管是抛出异常或者正常退出都会执行
     @After("webLog()")
     public void after(JoinPoint jp){
-        log.info("方法最后执行.....");
+        //log.info("方法最后执行.....");
     }
 
     //环绕通知,环绕增强，相当于MethodInterceptor
     @Around("webLog()")
     public Object arround(ProceedingJoinPoint pjp) {
         Object[] args = pjp.getArgs();
-        long start = System.currentTimeMillis();
         Date startDate = new Date();
 
         Signature signature = pjp.getSignature();
         log.info("方法环绕start......,执行时间:"+ DateUtil.format(startDate,"yyyy-MM-dd hh:mm:ss"));
         try {
+            long start = System.currentTimeMillis();
             Object o =  pjp.proceed();
             long end = System.currentTimeMillis();
             String time = formatExecuteTime(end - start);
-            log.info("方法环绕proceed，结果是 :" + JSON.toJSONString(o));
+            //log.info("方法环绕proceed，结果是 :" + JSON.toJSONString(o));
             log.info(String.format("方法签名:%s, 入参:%s, 开始执行时间:%s, 执行时间:%s", signature.toString(), Arrays.toString(args), sdf.format(startDate), time));
             return o;
         } catch (Throwable e) {
