@@ -4,6 +4,7 @@ import com.example.krpano.entity.testemp.TestEmp;
 import com.example.krpano.entity.testemp.TestEmpReq;
 import com.example.krpano.entity.output.testemp.TestEmpResp;
 import com.example.krpano.hander.testemp.TestEmpHandler;
+import com.example.krpano.util.ProviderEntityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -57,5 +58,21 @@ public class TestEmpServiceImpl implements TestEmpService {
             log.error("新增测试理顾异常", e);
         }
         return flag;
+    }
+    /**
+     * 根据参数查询记录
+     * @param testEmpReq
+     * @return
+     */
+    @Override
+    public TestEmpResp queryById(TestEmpReq testEmpReq) {
+        TestEmpResp testEmpResp = new TestEmpResp();
+        try {
+            TestEmp testEmp = testEmpHandler.selectById(testEmpReq);
+            testEmpResp = ProviderEntityUtil.convertEntity2Resp(testEmp);
+        } catch (Exception e) {
+            log.error("新增测试理顾异常", e);
+        }
+        return testEmpResp;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.krpano.hander.testemp;
 
 import com.example.krpano.entity.testemp.TestEmp;
+import com.example.krpano.entity.testemp.TestEmpReq;
 import com.example.krpano.mapper.testemp.TestEmpMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -43,8 +44,11 @@ public class TestEmpHandler {
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public boolean insertRecord(TestEmp testEmp) {
         int insertRecord = testEmpMapper.insert(testEmp);
-        int updateRecord = 1/0;
         return insertRecord > 0;
 
+    }
+
+    public TestEmp selectById(TestEmpReq testEmpReq) {
+        return testEmpMapper.selectByPrimaryKey(testEmpReq.getId());
     }
 }

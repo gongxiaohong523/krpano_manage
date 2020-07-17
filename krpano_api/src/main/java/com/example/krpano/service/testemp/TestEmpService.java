@@ -15,4 +15,11 @@ public interface TestEmpService {
      */
     boolean insert(TestEmpReq testEmp);
 
+    /**
+     * 根据参数查询记录
+     * @param testEmp
+     * @return
+     */
+    TestEmpResp queryById(TestEmpReq testEmp);
+
 }
